@@ -152,7 +152,7 @@ class _TelaLoginState extends State<TelaLogin> {
         validator: (value) {
           if (value == null || value == '' || value.length > 8) {
             //não foi possível converter o valor para double
-            return 'Entre com uma Senha';
+            return 'Entre com uma Senha Válida';
           } else {
             //a conversão foi realizada com sucesso
             return null;
