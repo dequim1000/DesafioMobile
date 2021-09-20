@@ -73,7 +73,7 @@ class _TelaLoginState extends State<TelaLogin> {
                 ),
                 campoTexto('Email', txtEmail),
                 campoSenha('Senha', txtSenha),
-                botao('LOGIN'),
+                botao('Entrar'),
               ],
             ),
           ),
@@ -174,7 +174,7 @@ class _TelaLoginState extends State<TelaLogin> {
   //
   botao(rotulo) {
     return Container(
-      margin: EdgeInsets.only(top: 30, right: 90, left: 90),
+      margin: EdgeInsets.only(top: 30, right: 850, left: 850),
       child: ElevatedButton(
         child: Text(rotulo),
         style: ElevatedButton.styleFrom(
