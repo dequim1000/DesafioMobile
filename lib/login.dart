@@ -174,7 +174,7 @@ class _TelaLoginState extends State<TelaLogin> {
   //
   botao(rotulo) {
     return Container(
-      margin: EdgeInsets.only(top: 30, right: 850, left: 850),
+      margin: EdgeInsets.only(top: 30, right: 90, left: 90),
       child: ElevatedButton(
         child: Text(rotulo),
         style: ElevatedButton.styleFrom(
