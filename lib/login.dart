@@ -59,7 +59,7 @@ class _TelaLoginState extends State<TelaLogin> {
       // BODY
       //
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.only(top: 100, right: 100, left: 100),
         child: SingleChildScrollView(
           child: Form(
             key: formKey,

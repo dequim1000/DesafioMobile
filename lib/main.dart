@@ -12,7 +12,7 @@ void main() {
       // TEMA
       //
       theme: ThemeData(
-        primaryColor: Colors.indigo[800],
+        primaryColor: Colors.deepPurple[900],
         backgroundColor: Colors.grey.shade200,
       ),
 
