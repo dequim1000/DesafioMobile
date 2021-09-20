@@ -13,7 +13,7 @@ void main() {
       //
       theme: ThemeData(
         primaryColor: Colors.blue.shade900,
-        backgroundColor: Colors.blue.shade100,
+        backgroundColor: Colors.grey.shade200,
       ),
 
       home: TelaLogin(),

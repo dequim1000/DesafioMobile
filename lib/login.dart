@@ -29,8 +29,15 @@ class _TelaLoginState extends State<TelaLogin> {
         title: Text('Login'),
         centerTitle: true,
 
+        //LOGO DATAMOB
+        leading: Image.asset('imagens/datamob.png', width: 300, height: 200 ),
+
         //Aplicação da cor definida no tema
         backgroundColor: Theme.of(context).primaryColor,
+
+        //Ícone de usuário
+        //leading: Icon(Icons.account_circle_rounded),
+        // leadingWidth: 56, 
 
         actions: [
           IconButton(
@@ -225,3 +232,5 @@ class _TelaLoginState extends State<TelaLogin> {
     );
   }
 }
+
+
