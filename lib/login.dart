@@ -60,6 +60,10 @@ class _TelaLoginState extends State<TelaLogin> {
       //
       body: Container(
         padding: EdgeInsets.only(top: 100, right: 100, left: 100),
+        margin: const EdgeInsets.fromLTRB(100, 100, 100, 0),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey, width: 2),
+            borderRadius: BorderRadius.all(Radius.circular(5.0))),
         child: SingleChildScrollView(
           child: Form(
             key: formKey,
