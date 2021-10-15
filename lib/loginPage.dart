@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 //
@@ -30,7 +29,7 @@ class _TelaLoginState extends State<TelaLogin> {
         centerTitle: true,
 
         //LOGO DATAMOB
-        leading: Image.asset('imagens/datamob.png'),
+        leading: Image.asset('assets/images/datamob.png'),
 
         //Aplicação da cor definida no tema
         backgroundColor: Theme.of(context).primaryColor,
@@ -42,6 +41,7 @@ class _TelaLoginState extends State<TelaLogin> {
         actions: [
           IconButton(
             icon: Icon(Icons.refresh),
+            tooltip: 'Atualizar Tela',
             onPressed: () {
               //print('botão pressionado');
               setState(() {
@@ -185,22 +185,32 @@ class _TelaLoginState extends State<TelaLogin> {
           ),
         ),
         onPressed: () {
-          //print('botão pressionado!');
+          setState(() {
+            var usr = txtEmail.text.toUpperCase();
+            var pwd = txtSenha.text;
 
-          //Executar o validador dos campos de texto
-          if (formKey.currentState!.validate()) {
-            //
-            // O método setState é utilizado para acessar o estado
-            // do App.
-            //
-            setState(() {
-              String Email = txtEmail.text;
-              String Senha = txtSenha.text;
-              String Dados = 'Email: ' + Email + 'Senha: ' + Senha;
+            if ((usr == 'USUARIO1' || usr == 'USUARIO2') && pwd == '1234') {
+              //
+              // NAVEGAÇÃO
+              //
+              //Abrir a PrincipalPage quando o usuário
+              //pressionar o botão entrar
+              Navigator.pushNamed(
+                context,
+                'nav',
 
-              caixaDialogo(Dados);
-            });
-          }
+                //Passar como argumento o nome do usuário
+                //para a PrincipalPage
+                arguments: usr,
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Usuário e/ou senha inválidos.'),
+                ),
+              );
+            }
+          });
         },
       ),
     );

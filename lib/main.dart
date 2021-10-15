@@ -1,6 +1,9 @@
-import 'dart:math';
+import 'package:desafio_flutter/menuPage.dart';
+import 'package:desafio_flutter/testeMenu.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'loginPage.dart';
+import 'mainPage.dart';
+import 'widgets/nav.dart';
 
 void main() {
   runApp(
@@ -17,6 +20,14 @@ void main() {
       ),
 
       home: TelaLogin(),
+      initialRoute: 'login',
+      routes: {
+        'login': (context) => TelaLogin(),
+        'main': (context) => MainPage(),
+        'nav': (context) => NavPage(),
+        'menu': (context) => MenuPage(),
+        'testemenu': (context) => HomeScreen(),
+      },
     ),
   );
 }
