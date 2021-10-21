@@ -1,5 +1,5 @@
 import 'package:desafio_flutter/mainPage.dart';
-import 'package:desafio_flutter/testeMenu.dart';
+import 'package:desafio_flutter/MenuPrincipal.dart';
 import 'package:flutter/material.dart';
 
 class NavPage extends StatefulWidget {

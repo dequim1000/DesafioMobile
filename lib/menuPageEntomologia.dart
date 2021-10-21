@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MenuPage extends StatefulWidget {
-  const MenuPage({Key? key}) : super(key: key);
+class MenuPageEntomologia extends StatefulWidget {
+  const MenuPageEntomologia({Key? key}) : super(key: key);
 
   @override
   _MenuPageState createState() => _MenuPageState();
 }
 
-class _MenuPageState extends State<MenuPage> {
+class _MenuPageState extends State<MenuPageEntomologia> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class _MenuPageState extends State<MenuPage> {
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
                                 Icon(Icons.bug_report, size: 50),
-                                Text("Entomologia"),
+                                Text("Pragas de Solo"),
                               ],
                             ),
                             style: TextButton.styleFrom(
@@ -62,7 +62,30 @@ class _MenuPageState extends State<MenuPage> {
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
                                 Icon(Icons.inventory_outlined, size: 50),
-                                Text("Auditoria"),
+                                Text("Sphenophorus"),
+                              ],
+                            ),
+                            style: TextButton.styleFrom(
+                              primary: Colors.grey.shade200,
+                              backgroundColor: Colors.blue.shade900,
+                              elevation: 5,
+                              textStyle: const TextStyle(fontSize: 45),
+                              padding: EdgeInsets.symmetric(
+                                vertical: 20,
+                                horizontal: 65,
+                              ),
+                            ),
+                            onPressed: () {
+                              print('Pressed');
+                            },
+                          ),
+                          SizedBox(height: 40),
+                          TextButton(
+                            child: Column(
+                              // Replace with a Row for horizontal icon + text
+                              children: <Widget>[
+                                Icon(Icons.inventory_outlined, size: 50),
+                                Text("Broca Gigante"),
                               ],
                             ),
                             style: TextButton.styleFrom(

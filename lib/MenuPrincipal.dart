@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.pushNamed(
                               context,
-                              'menu',
+                              'menuEntomologia',
                             );
                             print('Pressed');
                           },
@@ -78,6 +78,10 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              'menuAuditoria',
+                            );
                             print('Pressed');
                           },
                         ),

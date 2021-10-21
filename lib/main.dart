@@ -1,5 +1,6 @@
-import 'package:desafio_flutter/menuPage.dart';
-import 'package:desafio_flutter/testeMenu.dart';
+import 'package:desafio_flutter/menuPageAuditoria.dart';
+import 'package:desafio_flutter/menuPageEntomologia.dart';
+import 'package:desafio_flutter/MenuPrincipal.dart';
 import 'package:flutter/material.dart';
 import 'loginPage.dart';
 import 'mainPage.dart';
@@ -25,8 +26,9 @@ void main() {
         'login': (context) => TelaLogin(),
         'main': (context) => MainPage(),
         'nav': (context) => NavPage(),
-        'menu': (context) => MenuPage(),
-        'testemenu': (context) => HomeScreen(),
+        'menuEntomologia': (context) => MenuPageEntomologia(),
+        'menuAuditoria': (context) => MenuPageAuditoria(),
+        'menu': (context) => HomeScreen(),
       },
     ),
   );
