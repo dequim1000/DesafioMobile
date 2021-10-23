@@ -12,7 +12,7 @@ class _MenuPageState extends State<MenuPageAuditoria> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DataMob'),
+        title: Text('Apontamentos Auditoria'),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -38,7 +38,7 @@ class _MenuPageState extends State<MenuPageAuditoria> {
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.bug_report, size: 50),
+                                Icon(Icons.inventory_outlined, size: 50),
                                 Text("Perdas"),
                               ],
                             ),
@@ -49,10 +49,14 @@ class _MenuPageState extends State<MenuPageAuditoria> {
                               textStyle: const TextStyle(fontSize: 45),
                               padding: EdgeInsets.symmetric(
                                 vertical: 20,
-                                horizontal: 30,
+                                horizontal: 140,
                               ),
                             ),
                             onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                'perdasPage',
+                              );
                               print('Pressed');
                             },
                           ),

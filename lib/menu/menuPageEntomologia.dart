@@ -12,7 +12,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DataMob'),
+        title: Text('Apontamentos Entomologia'),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -49,10 +49,14 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                               textStyle: const TextStyle(fontSize: 45),
                               padding: EdgeInsets.symmetric(
                                 vertical: 20,
-                                horizontal: 30,
+                                horizontal: 60,
                               ),
                             ),
                             onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                'pragasDeSoloPage',
+                              );
                               print('Pressed');
                             },
                           ),
@@ -61,7 +65,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.inventory_outlined, size: 50),
+                                Icon(Icons.bug_report, size: 50),
                                 Text("Sphenophorus"),
                               ],
                             ),
@@ -76,6 +80,10 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                               ),
                             ),
                             onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                'sphenophorousPage',
+                              );
                               print('Pressed');
                             },
                           ),
@@ -84,7 +92,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.inventory_outlined, size: 50),
+                                Icon(Icons.bug_report, size: 50),
                                 Text("Broca Gigante"),
                               ],
                             ),
@@ -99,6 +107,10 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                               ),
                             ),
                             onPressed: () {
+                              Navigator.pushNamed(
+                                context,
+                                'brocasPage',
+                              );
                               print('Pressed');
                             },
                           ),
