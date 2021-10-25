@@ -54,7 +54,12 @@ class BrocasGigantesPage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.map),
             tooltip: 'Abrir Mapa',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                'mapsPage',
+              );
+            },
           ),
           IconButton(
             icon: Icon(Icons.camera),

@@ -3,6 +3,10 @@
    <application
         android:label="desafio_flutter"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCye4Rx_PanyTBVXz2-il9KavAnEGxgu_Q"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

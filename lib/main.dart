@@ -5,6 +5,7 @@ import 'package:desafio_flutter/menu/entomologia/sphenophorus.dart';
 import 'package:desafio_flutter/menu/menuPageAuditoria.dart';
 import 'package:desafio_flutter/menu/menuPageEntomologia.dart';
 import 'package:desafio_flutter/menu/MenuPrincipal.dart';
+import 'package:desafio_flutter/widgets/maps.dart';
 import 'package:flutter/material.dart';
 import 'login/loginPage.dart';
 import '../menu/mainPage.dart';
@@ -37,6 +38,7 @@ void main() {
         'sphenophorousPage': (context) => SphenophorousPage(),
         'pragasDeSoloPage': (context) => PragasDeSolosPage(),
         'perdasPage': (context) => PerdasPage(),
+        'mapsPage': (context) => MapsPAge(),
         // 'mapsPage': (context) => BrocasGigantesPage(),
         // 'cameraPage': (context) => BrocasGigantesPage(),
       },
