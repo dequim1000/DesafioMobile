@@ -40,7 +40,6 @@ class PerdasPage extends StatelessWidget {
       TextEditingController();
   final TextEditingController _controladorTempoPessoas =
       TextEditingController();
-  final TextEditingController _controladorQuantidade = TextEditingController();
   final TextEditingController _controladorNumeroLev = TextEditingController();
   final TextEditingController _controladorQuantideColaboradores =
       TextEditingController();

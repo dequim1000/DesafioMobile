@@ -34,10 +34,11 @@ class HomeScreen extends StatelessWidget {
                       childAspectRatio: width / (height / 6),
                       children: <Widget>[
                         TextButton(
+                          key: Key('botaoEntomologia'),
                           child: Column(
                             // Replace with a Row for horizontal icon + text
                             children: <Widget>[
-                              Icon(Icons.bug_report, size: 50),
+                              Icon(Icons.bug_report, size: 40),
                               Text("Entomologia"),
                             ],
                           ),
@@ -45,11 +46,9 @@ class HomeScreen extends StatelessWidget {
                             primary: Colors.grey.shade200,
                             backgroundColor: Colors.blue.shade900,
                             elevation: 5,
-                            textStyle: const TextStyle(fontSize: 45),
-                            padding: EdgeInsets.symmetric(
-                              vertical: 20,
-                              horizontal: 30,
-                            ),
+                            textStyle: const TextStyle(fontSize: 35),
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.all(20),
                           ),
                           onPressed: () {
                             Navigator.pushNamed(
@@ -60,10 +59,11 @@ class HomeScreen extends StatelessWidget {
                           },
                         ),
                         TextButton(
+                          key: Key('botaoAuditoria'),
                           child: Column(
                             // Replace with a Row for horizontal icon + text
                             children: <Widget>[
-                              Icon(Icons.inventory_outlined, size: 50),
+                              Icon(Icons.inventory_outlined, size: 40),
                               Text("Auditoria"),
                             ],
                           ),
@@ -71,11 +71,9 @@ class HomeScreen extends StatelessWidget {
                             primary: Colors.grey.shade200,
                             backgroundColor: Colors.blue.shade900,
                             elevation: 5,
-                            textStyle: const TextStyle(fontSize: 45),
-                            padding: EdgeInsets.symmetric(
-                              vertical: 20,
-                              horizontal: 65,
-                            ),
+                            textStyle: const TextStyle(fontSize: 35),
+                            padding: EdgeInsets.all(20),
+                            alignment: Alignment.center,
                           ),
                           onPressed: () {
                             Navigator.pushNamed(

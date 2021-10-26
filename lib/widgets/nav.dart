@@ -33,6 +33,7 @@ class _NavState extends State<NavPage> {
         leading: Image.asset('assets/images/datamob.png'),
         actions: [
           IconButton(
+            key: Key('botaoDeslogar'),
             icon: Icon(Icons.logout),
             tooltip: 'Sair',
             onPressed: () {
@@ -48,9 +49,11 @@ class _NavState extends State<NavPage> {
         ],
       ),
       body: Center(
+        key: Key('selecaoItem'),
         child: _widegetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        key: Key('botaoNavigator'),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

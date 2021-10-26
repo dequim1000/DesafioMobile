@@ -35,10 +35,11 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           TextButton(
+                            key: Key('botaoPragas'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.bug_report, size: 50),
+                                Icon(Icons.bug_report, size: 40),
                                 Text("Pragas de Solo"),
                               ],
                             ),
@@ -46,7 +47,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                               primary: Colors.grey.shade200,
                               backgroundColor: Colors.blue.shade900,
                               elevation: 5,
-                              textStyle: const TextStyle(fontSize: 45),
+                              textStyle: const TextStyle(fontSize: 35),
                               padding: EdgeInsets.symmetric(
                                 vertical: 20,
                                 horizontal: 60,
@@ -62,10 +63,11 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                           ),
                           SizedBox(height: 40),
                           TextButton(
+                            key: Key('botaoSphe'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.bug_report, size: 50),
+                                Icon(Icons.bug_report, size: 40),
                                 Text("Sphenophorus"),
                               ],
                             ),
@@ -73,7 +75,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                               primary: Colors.grey.shade200,
                               backgroundColor: Colors.blue.shade900,
                               elevation: 5,
-                              textStyle: const TextStyle(fontSize: 45),
+                              textStyle: const TextStyle(fontSize: 35),
                               padding: EdgeInsets.symmetric(
                                 vertical: 20,
                                 horizontal: 65,
@@ -89,10 +91,11 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                           ),
                           SizedBox(height: 40),
                           TextButton(
+                            key: Key('botaoBroca'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.bug_report, size: 50),
+                                Icon(Icons.bug_report, size: 40),
                                 Text("Broca Gigante"),
                               ],
                             ),
@@ -100,7 +103,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                               primary: Colors.grey.shade200,
                               backgroundColor: Colors.blue.shade900,
                               elevation: 5,
-                              textStyle: const TextStyle(fontSize: 45),
+                              textStyle: const TextStyle(fontSize: 35),
                               padding: EdgeInsets.symmetric(
                                 vertical: 20,
                                 horizontal: 65,

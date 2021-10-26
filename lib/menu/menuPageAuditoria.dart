@@ -17,6 +17,7 @@ class _MenuPageState extends State<MenuPageAuditoria> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
+          key: Key('botaoVoltarAuditoria'),
         ),
       ),
       body: Stack(
@@ -35,10 +36,11 @@ class _MenuPageState extends State<MenuPageAuditoria> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           TextButton(
+                            key: Key('botaoPerdas'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
-                                Icon(Icons.inventory_outlined, size: 50),
+                                Icon(Icons.inventory_outlined, size: 40),
                                 Text("Perdas"),
                               ],
                             ),
@@ -46,7 +48,7 @@ class _MenuPageState extends State<MenuPageAuditoria> {
                               primary: Colors.grey.shade200,
                               backgroundColor: Colors.blue.shade900,
                               elevation: 5,
-                              textStyle: const TextStyle(fontSize: 45),
+                              textStyle: const TextStyle(fontSize: 35),
                               padding: EdgeInsets.symmetric(
                                 vertical: 20,
                                 horizontal: 140,
