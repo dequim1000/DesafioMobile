@@ -55,7 +55,6 @@ void main() {
       MaterialApp(
         routes: {
           'menuEntomologia': (context) => MenuPageEntomologia(),
-          'menu': (context) => HomeScreen(),
         },
       ),
     );
