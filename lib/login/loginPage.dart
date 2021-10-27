@@ -89,7 +89,7 @@ class _TelaLoginState extends State<TelaLogin> {
   //
   campoTexto(rotulo, variavelControle) {
     return Container(
-      key: Key('campoEmail'),
+      key: ValueKey("campoEmail"),
       padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
       child: TextFormField(
         //exibir o telado numérico
@@ -132,7 +132,7 @@ class _TelaLoginState extends State<TelaLogin> {
   //
   campoSenha(rotulo, variavelControle) {
     return Container(
-      key: Key('campoSenha'),
+      key: ValueKey('campoSenha'),
       padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
       child: TextFormField(
         //exibir o telado numérico
@@ -176,7 +176,7 @@ class _TelaLoginState extends State<TelaLogin> {
   //
   botao(rotulo) {
     return Container(
-      key: Key('botaoLogin'),
+      key: ValueKey('botaoLogin'),
       margin: EdgeInsets.only(top: 30, right: 90, left: 90),
       child: ElevatedButton(
         child: Text(rotulo),

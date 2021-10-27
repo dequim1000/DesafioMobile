@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                       childAspectRatio: width / (height / 6),
                       children: <Widget>[
                         TextButton(
-                          key: Key('botaoEntomologia'),
+                          key: ValueKey('botaoEntomologia'),
                           child: Column(
                             // Replace with a Row for horizontal icon + text
                             children: <Widget>[
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                           },
                         ),
                         TextButton(
-                          key: Key('botaoAuditoria'),
+                          key: ValueKey('botaoAuditoria'),
                           child: Column(
                             // Replace with a Row for horizontal icon + text
                             children: <Widget>[

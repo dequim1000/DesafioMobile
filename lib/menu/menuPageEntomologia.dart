@@ -35,7 +35,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           TextButton(
-                            key: Key('botaoPragas'),
+                            key: ValueKey('botaoPragas'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
@@ -63,7 +63,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                           ),
                           SizedBox(height: 40),
                           TextButton(
-                            key: Key('botaoSphe'),
+                            key: ValueKey('botaoSphe'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
@@ -91,7 +91,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                           ),
                           SizedBox(height: 40),
                           TextButton(
-                            key: Key('botaoBroca'),
+                            key: ValueKey('botaoBroca'),
                             child: Column(
                               // Replace with a Row for horizontal icon + text
                               children: <Widget>[
