@@ -10,6 +10,6 @@ DATAMOB - UNAERP.
 - Henrique Bordonale - 831620
 
 Comando para rodar caso esteja com problema:
-flutter run --no-sound-null-safety
+-> flutter run --no-sound-null-safety
 
 
