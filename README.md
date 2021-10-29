@@ -9,6 +9,7 @@ DATAMOB - UNAERP.
 - Victor Signorini - 831891
 - Henrique Bordonale - 831620
 
-
+Comando para rodar caso esteja com problema:
+flutter run --no-sound-null-safety
 
 
