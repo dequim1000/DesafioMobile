@@ -34,19 +34,20 @@ void main() {
   testWidgets('Deve testar a funcionalidade do Menu',
       (WidgetTester tester) async {
     await tester.pumpWidget(MaterialApp(
+      home: TelaLogin(),
       routes: {
         'menu': (context) => HomeScreen(),
       },
     ));
 
-    final botaoEntomologia = find.byKey(Key('botaoEntomologia'));
-    expect(botaoEntomologia, findsOneWidget);
-    final botaoAuditoria = find.byKey(Key('botaoAuditoria'));
-    expect(botaoAuditoria, findsOneWidget);
+    //final botaoEntomologia = find.byKey(ValueKey('botaoEntomologia'));
+    expect(find.byKey(ValueKey('botaoEntomologia')), findsOneWidget);
+    //final botaoAuditoria = find.byKey(Key('botaoAuditoria'));
+    expect(find.byKey(Key('botaoAuditoria')), findsOneWidget);
 
-    await tester.tap(botaoEntomologia);
+    await tester.tap(find.byKey(ValueKey('botaoEntomologia')));
     await tester.pump();
-    expect(botaoEntomologia, findsOneWidget);
+    expect(find.byKey(ValueKey('botaoEntomologia')), findsOneWidget);
   });
 
   testWidgets('Deve testar a funcionalidade do Menu Entomologia',
