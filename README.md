@@ -1,16 +1,11 @@
-# desafio_flutter
+# DESAFIO FLUTTER
+DATAMOB - UNAERP.
+## PARTICIPANTES
+- André Otávio - 831487
+- Gideone Rodrigues - 832409
+- Victor Signorini - 831891
+- Henrique Bordonale - 831620
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Comando para rodar caso esteja com problema:
+Comando para rodar o projeto:
+- flutter run --no-sound-null-safety
