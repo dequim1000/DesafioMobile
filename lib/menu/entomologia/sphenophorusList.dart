@@ -15,10 +15,6 @@ class _SphenophorusListPageState extends State<SphenophorusListPage> {
   @override
   void initState() {
     super.initState();
-
-    //Referenciar a Coleção desejada
-    //sphenophorus = FirebaseFirestore.instance.collection('sphenophorus')
-    //  .where('nome', isEqualTo: 'UTAM');
     sphenophorus = FirebaseFirestore.instance.collection('sphenophorus');
   }
 

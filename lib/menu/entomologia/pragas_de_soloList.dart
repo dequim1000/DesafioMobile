@@ -15,10 +15,6 @@ class _PragasListState extends State<PragasList> {
   @override
   void initState() {
     super.initState();
-
-    //Referenciar a Coleção desejada
-    //cafes = FirebaseFirestore.instance.collection('cafes')
-    //  .where('nome', isEqualTo: 'UTAM');
     pragas = FirebaseFirestore.instance.collection('pragas');
   }
 

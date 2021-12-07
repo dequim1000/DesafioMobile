@@ -15,10 +15,6 @@ class _BrocasListPageState extends State<BrocasListPage> {
   @override
   void initState() {
     super.initState();
-
-    //Referenciar a Coleção desejada
-    //brocas = FirebaseFirestore.instance.collection('brocas')
-    //  .where('nome', isEqualTo: 'UTAM');
     brocas = FirebaseFirestore.instance.collection('brocas');
   }
 
@@ -39,6 +35,9 @@ class _BrocasListPageState extends State<BrocasListPage> {
         talhao,
         style: TextStyle(fontSize: 24),
       ),
+      onTap: () {
+        Navigator.pushNamed(context, 'brocasPage');
+      },
     );
   }
 
