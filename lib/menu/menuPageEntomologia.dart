@@ -56,7 +56,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                             onPressed: () {
                               Navigator.pushNamed(
                                 context,
-                                'pragasDeSoloPage',
+                                'pragasList',
                               );
                               print('Pressed');
                             },
@@ -84,7 +84,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                             onPressed: () {
                               Navigator.pushNamed(
                                 context,
-                                'sphenophorousPage',
+                                'sphenophorusList',
                               );
                               print('Pressed');
                             },
@@ -112,7 +112,7 @@ class _MenuPageState extends State<MenuPageEntomologia> {
                             onPressed: () {
                               Navigator.pushNamed(
                                 context,
-                                'brocasPage',
+                                'brocasList',
                               );
                               print('Pressed');
                             },

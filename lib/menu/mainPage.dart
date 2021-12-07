@@ -13,18 +13,13 @@ class MainPage extends StatefulWidget {
 class _PrincipalPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    //
-    // RECUPERAR O NOME DO USUÁRIO
-    //
-    var usr = ModalRoute.of(context)!.settings.arguments.toString();
-
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(30),
         child: Column(
           children: [
             Text(
-              'Olá $usr, seja bem-vindo',
+              'Olá, seja bem-vindo',
               style: TextStyle(
                 fontSize: 24,
               ),

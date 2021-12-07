@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 //
 // TELA LOGIN
@@ -74,6 +75,7 @@ class _TelaLoginState extends State<TelaLogin> {
                 campoTexto('Email', txtEmail),
                 campoSenha('Senha', txtSenha),
                 botao('Entrar'),
+                botaoCadastrar('Cadastrar'),
               ],
             ),
           ),
@@ -191,29 +193,28 @@ class _TelaLoginState extends State<TelaLogin> {
           setState(() {
             var usr = txtEmail.text.toUpperCase();
             var pwd = txtSenha.text;
-
-            if ((usr == 'USUARIO1' || usr == 'USUARIO2') && pwd == '1234') {
-              //
-              // NAVEGAÇÃO
-              //
-              //Abrir a PrincipalPage quando o usuário
-              //pressionar o botão entrar
-              Navigator.pushNamed(
-                context,
-                'nav',
-
-                //Passar como argumento o nome do usuário
-                //para a PrincipalPage
-                arguments: usr,
-              );
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Usuário e/ou senha inválidos.'),
-                ),
-              );
-            }
+            login(usr, pwd);
           });
+        },
+      ),
+    );
+  }
+
+  botaoCadastrar(rotulo) {
+    return Container(
+      key: ValueKey('botaoCadastrar'),
+      margin: EdgeInsets.only(top: 30, right: 90, left: 90),
+      child: ElevatedButton(
+        child: Text(rotulo),
+        style: ElevatedButton.styleFrom(
+          primary: Theme.of(context).primaryColor,
+          padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+          textStyle: TextStyle(
+            fontSize: 24,
+          ),
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, 'criar_conta');
         },
       ),
     );
@@ -243,5 +244,33 @@ class _TelaLoginState extends State<TelaLogin> {
         );
       },
     );
+  }
+
+  void login(email, senha) {
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: senha)
+        .then((value) {
+      Navigator.pushReplacementNamed(context, 'nav');
+    }).catchError((erro) {
+      var msg = '';
+
+      if (erro.code == 'user-not-found') {
+        msg = 'ERRO: Usuario não encontrado';
+      } else if (erro.code == 'wrong-password') {
+        msg = 'ERRO: Senha incorreta';
+      } else if (erro.code == 'invalid-email') {
+        msg = 'ERRO: Email inválido';
+      } else {
+        msg = 'ERRO: ${erro.message}';
+      }
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(msg),
+          duration: Duration(
+            seconds: 2,
+          ),
+        ),
+      );
+    });
   }
 }

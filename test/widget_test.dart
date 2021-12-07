@@ -71,4 +71,26 @@ void main() {
     await tester.pump();
     expect(botaoPragas, findsOneWidget);
   });
+
+  testWidgets('Deve testar a funcionalidade do Menu Auditoria',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        routes: {
+          'menuEntomologia': (context) => MenuPageEntomologia(),
+        },
+      ),
+    );
+
+    final botaoPragas = find.byKey(Key('botaoPragas'));
+    expect(botaoPragas, findsOneWidget);
+    final botaoSphe = find.byKey(Key('botaoSphe'));
+    expect(botaoSphe, findsOneWidget);
+    final botaoBroca = find.byKey(Key('botaoBroca'));
+    expect(botaoBroca, findsOneWidget);
+
+    await tester.tap(botaoPragas);
+    await tester.pump();
+    expect(botaoPragas, findsOneWidget);
+  });
 }

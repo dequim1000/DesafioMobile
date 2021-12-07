@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "181913900284",
+    "project_id": "datamob",
+    "storage_bucket": "datamob.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181913900284:android:daee3a90f07c9e754d3379",
+        "android_client_info": {
+          "package_name": "com.datamobUnaerp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181913900284-5o56350vs0je277ugj1tbhr8m4lle1uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2M-b1yP4VnBNQzHMYrpSlO0cgwYfuf0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181913900284-5o56350vs0je277ugj1tbhr8m4lle1uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

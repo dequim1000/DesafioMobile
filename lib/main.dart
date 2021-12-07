@@ -1,3 +1,6 @@
+import 'dart:js';
+
+import 'package:desafio_flutter/login/criar_conta.dart';
 import 'package:desafio_flutter/menu/auditoria/perdas.dart';
 import 'package:desafio_flutter/menu/entomologia/brocasGigante.dart';
 import 'package:desafio_flutter/menu/entomologia/pragas_de_solo.dart';
@@ -9,9 +12,16 @@ import 'package:desafio_flutter/widgets/maps.dart';
 import 'package:flutter/material.dart';
 import 'login/loginPage.dart';
 import '../menu/mainPage.dart';
+import 'menu/entomologia/brocasGiganteList.dart';
+import 'menu/entomologia/pragas_de_soloList.dart';
+import 'menu/entomologia/sphenophorusList.dart';
 import 'widgets/nav.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -36,11 +46,13 @@ void main() {
         'menu': (context) => HomeScreen(),
         'brocasPage': (context) => BrocasGigantesPage(),
         'sphenophorousPage': (context) => SphenophorousPage(),
-        'pragasDeSoloPage': (context) => PragasDeSolosPage(),
+        'pragasDeSoloPage': (context) => PragasDeSoloPage(),
         'perdasPage': (context) => PerdasPage(),
-        'mapsPage': (context) => MapsPAge(),
-        // 'mapsPage': (context) => BrocasGigantesPage(),
-        // 'cameraPage': (context) => BrocasGigantesPage(),
+        'criar_conta': (context) => CriarContaPage(),
+        'brocasList': (context) => BrocasListPage(),
+        'pragasList': (context) => PragasList(),
+        'sphenophorusList': (context) => SphenophorusListPage(),
+        'perdasList': (context) => BrocasListPage(),
       },
     ),
   );
