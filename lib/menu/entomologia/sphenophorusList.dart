@@ -35,6 +35,31 @@ class _SphenophorusListPageState extends State<SphenophorusListPage> {
         talhao,
         style: TextStyle(fontSize: 24),
       ),
+      trailing: SizedBox(
+        width: 80,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  'sphenophorousPage',
+                  arguments: item.id,
+                );
+              },
+              icon: Icon(Icons.edit),
+            ),
+            IconButton(
+              onPressed: () {
+                sphenophorus.doc(item.id).delete();
+              },
+              icon: Icon(Icons.delete),
+            ),
+          ],
+        ),
+      ),
     );
   }
 

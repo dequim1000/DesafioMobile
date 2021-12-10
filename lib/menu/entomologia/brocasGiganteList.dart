@@ -35,9 +35,31 @@ class _BrocasListPageState extends State<BrocasListPage> {
         talhao,
         style: TextStyle(fontSize: 24),
       ),
-      onTap: () {
-        Navigator.pushNamed(context, 'brocasPage');
-      },
+      trailing: SizedBox(
+        width: 80,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  'brocasPage',
+                  arguments: item.id,
+                );
+              },
+              icon: Icon(Icons.edit),
+            ),
+            IconButton(
+              onPressed: () {
+                brocas.doc(item.id).delete();
+              },
+              icon: Icon(Icons.delete),
+            ),
+          ],
+        ),
+      ),
     );
   }
 

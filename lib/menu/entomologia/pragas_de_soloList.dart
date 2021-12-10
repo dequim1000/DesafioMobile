@@ -35,6 +35,31 @@ class _PragasListState extends State<PragasList> {
         talhao,
         style: TextStyle(fontSize: 24),
       ),
+      trailing: SizedBox(
+        width: 80,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  'pragasDeSoloPage',
+                  arguments: item.id,
+                );
+              },
+              icon: Icon(Icons.edit),
+            ),
+            IconButton(
+              onPressed: () {
+                pragas.doc(item.id).delete();
+              },
+              icon: Icon(Icons.delete),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
