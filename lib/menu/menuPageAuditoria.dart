@@ -57,7 +57,7 @@ class _MenuPageState extends State<MenuPageAuditoria> {
                             onPressed: () {
                               Navigator.pushNamed(
                                 context,
-                                'perdasPage',
+                                'perdasList',
                               );
                               print('Pressed');
                             },

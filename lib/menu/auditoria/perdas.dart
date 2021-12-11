@@ -1,51 +1,54 @@
 import 'package:flutter/material.dart';
-
-class Perdas {
-  final String secao,
-      quadra,
-      talhao,
-      pequenas,
-      aptas,
-      crisalidas,
-      massas,
-      outrosParasitadas,
-      tempoPessoa;
-  final int? quantidade, nroLev, qtdeColaboradores;
-
-  Perdas(
-    this.secao,
-    this.quantidade,
-    this.quadra,
-    this.talhao,
-    this.pequenas,
-    this.aptas,
-    this.crisalidas,
-    this.massas,
-    this.outrosParasitadas,
-    this.tempoPessoa,
-    this.nroLev,
-    this.qtdeColaboradores,
-  );
-}
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PerdasPage extends StatelessWidget {
-  final TextEditingController _controladorSecao = TextEditingController();
-  final TextEditingController _controladorQuadra = TextEditingController();
-  final TextEditingController _controladorTalhao = TextEditingController();
-  final TextEditingController _controladorPequenas = TextEditingController();
-  final TextEditingController _controladorAptas = TextEditingController();
-  final TextEditingController _controladorCrisalidas = TextEditingController();
-  final TextEditingController _controladorMassas = TextEditingController();
-  final TextEditingController _controladorOutrosParasitas =
-      TextEditingController();
-  final TextEditingController _controladorTempoPessoas =
-      TextEditingController();
-  final TextEditingController _controladorNumeroLev = TextEditingController();
-  final TextEditingController _controladorQuantideColaboradores =
-      TextEditingController();
+  var _controladorSecao = TextEditingController();
+  var _controladorQuadra = TextEditingController();
+  var _controladorTalhao = TextEditingController();
+  var _controladorPequenas = TextEditingController();
+  var _controladorAptas = TextEditingController();
+  var _controladorCrisalidas = TextEditingController();
+  var _controladorMassas = TextEditingController();
+  var _controladorOutrosParasitas = TextEditingController();
+  var _controladorTempoPessoas = TextEditingController();
+  var _controladorQuantidade = TextEditingController();
+  var _controladorNumeroLev = TextEditingController();
+  var _controladorQuantideColaboradores = TextEditingController();
+
+  getDocumentById(id) async {
+    await FirebaseFirestore.instance
+        .collection('perdas')
+        .doc(id)
+        .get()
+        .then((value) {
+      _controladorSecao.text = value.get('secao');
+      _controladorQuadra.text = value.get('quadra');
+      _controladorTalhao.text = value.get('talhao');
+      _controladorPequenas.text = value.get('pequenas');
+      _controladorAptas.text = value.get('aptas');
+      _controladorCrisalidas.text = value.get('crisalidas');
+      _controladorMassas.text = value.get('massas');
+      _controladorOutrosParasitas.text = value.get('outrosParasitas');
+      _controladorTempoPessoas.text = value.get('tempoPessoas');
+      _controladorQuantidade.text = value.get('quantidade');
+      _controladorNumeroLev.text = value.get('numeroLev');
+      _controladorQuantideColaboradores.text =
+          value.get('quantidadeColaboradores');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    var id = ModalRoute.of(context)?.settings.arguments;
+
+    if (id != null) {
+      if (_controladorSecao.text.isEmpty &&
+          _controladorQuadra.text.isEmpty &&
+          _controladorTalhao.text.isEmpty) {
+        getDocumentById(id);
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Perdas'),
@@ -209,7 +212,61 @@ class PerdasPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  print('Perdas');
+                  if (id == null) {
+                    //
+                    // ADICIONAR um novo documento na Coleção
+                    //
+                    FirebaseFirestore.instance.collection('perdas').add(
+                      {
+                        'secao': _controladorSecao.text,
+                        'quadra': _controladorQuadra.text,
+                        'talhao': _controladorTalhao.text,
+                        'pequenas': _controladorPequenas.text,
+                        'aptas': _controladorAptas.text,
+                        'crisalidas': _controladorCrisalidas.text,
+                        'massas': _controladorMassas.text,
+                        'outrosParasitas': _controladorOutrosParasitas.text,
+                        'tempoPessoas': _controladorTempoPessoas.text,
+                        'quantidade': _controladorQuantidade.text,
+                        'numeroLev': _controladorNumeroLev.text,
+                        'quantidadeColaboradores':
+                            _controladorQuantideColaboradores.text,
+                      },
+                    ).catchError((erro) {
+                      print(erro.toString());
+                    });
+                  } else {
+                    //
+                    // ATUALIZAR um documento na Coleção
+                    //
+                    FirebaseFirestore.instance
+                        .collection('perdas')
+                        .doc(id.toString())
+                        .set(
+                      {
+                        'secao': _controladorSecao.text,
+                        'quadra': _controladorQuadra.text,
+                        'talhao': _controladorTalhao.text,
+                        'pequenas': _controladorPequenas.text,
+                        'aptas': _controladorAptas.text,
+                        'crisalidas': _controladorCrisalidas.text,
+                        'massas': _controladorMassas.text,
+                        'outrosParasitas': _controladorOutrosParasitas.text,
+                        'tempoPessoas': _controladorTempoPessoas.text,
+                        'quantidade': _controladorQuantidade.text,
+                        'numeroLev': _controladorNumeroLev.text,
+                        'quantidadeColaboradores':
+                            _controladorQuantideColaboradores.text,
+                      },
+                    );
+                  }
+
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text('Operação realizada com sucesso'),
+                    duration: Duration(seconds: 2),
+                  ));
+
+                  Navigator.pop(context);
                 },
                 child: Text('Enviar'),
               ),

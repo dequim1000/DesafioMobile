@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:desafio_flutter/login/criar_conta.dart';
 import 'package:desafio_flutter/menu/auditoria/perdas.dart';
+import 'package:desafio_flutter/menu/auditoria/perdasList.dart';
 import 'package:desafio_flutter/menu/entomologia/brocasGigante.dart';
 import 'package:desafio_flutter/menu/entomologia/pragas_de_solo.dart';
 import 'package:desafio_flutter/menu/entomologia/sphenophorus.dart';
@@ -52,7 +53,7 @@ Future<void> main() async {
         'brocasList': (context) => BrocasListPage(),
         'pragasList': (context) => PragasList(),
         'sphenophorusList': (context) => SphenophorusListPage(),
-        'perdasList': (context) => BrocasListPage(),
+        'perdasList': (context) => PerdasListPage(),
       },
     ),
   );

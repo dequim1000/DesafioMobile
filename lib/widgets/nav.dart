@@ -1,5 +1,6 @@
 import 'package:desafio_flutter/menu/mainPage.dart';
 import 'package:desafio_flutter/menu/MenuPrincipal.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class NavPage extends StatefulWidget {
@@ -36,14 +37,9 @@ class _NavState extends State<NavPage> {
             key: Key('botaoDeslogar'),
             icon: Icon(Icons.logout),
             tooltip: 'Sair',
-            onPressed: () {
-              //
-              // NAVEGAÇÃO
-              //
-              //Ao pressionar o botão o
-              //usuário será levado para a
-              //LoginPage
-              Navigator.pop(context);
+            onPressed: () async {
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacementNamed(context, 'login');
             },
           )
         ],

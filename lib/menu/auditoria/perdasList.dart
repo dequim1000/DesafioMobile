@@ -2,20 +2,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class SphenophorusListPage extends StatefulWidget {
-  const SphenophorusListPage({Key? key}) : super(key: key);
+class PerdasListPage extends StatefulWidget {
+  const PerdasListPage({Key? key}) : super(key: key);
 
   @override
-  _SphenophorusListPageState createState() => _SphenophorusListPageState();
+  _PerdasListPageState createState() => _PerdasListPageState();
 }
 
-class _SphenophorusListPageState extends State<SphenophorusListPage> {
-  var sphenophorus;
+class _PerdasListPageState extends State<PerdasListPage> {
+  var perdas;
 
   @override
   void initState() {
     super.initState();
-    sphenophorus = FirebaseFirestore.instance.collection('sphenophorus');
+    perdas = FirebaseFirestore.instance.collection('perdas');
   }
 
   //
@@ -45,7 +45,7 @@ class _SphenophorusListPageState extends State<SphenophorusListPage> {
               onPressed: () {
                 Navigator.pushNamed(
                   context,
-                  'sphenophorousPage',
+                  'perdasPage',
                   arguments: item.id,
                 );
               },
@@ -53,7 +53,7 @@ class _SphenophorusListPageState extends State<SphenophorusListPage> {
             ),
             IconButton(
               onPressed: () {
-                sphenophorus.doc(item.id).delete();
+                perdas.doc(item.id).delete();
               },
               icon: Icon(Icons.delete),
             ),
@@ -86,7 +86,7 @@ class _SphenophorusListPageState extends State<SphenophorusListPage> {
           backgroundColor: Colors.blue.shade600,
           child: const Icon(Icons.add),
           onPressed: () {
-            Navigator.pushNamed(context, 'sphenophorousPage');
+            Navigator.pushNamed(context, 'perdasPage');
           },
         ),
 
@@ -97,7 +97,7 @@ class _SphenophorusListPageState extends State<SphenophorusListPage> {
           padding: EdgeInsets.all(20),
           child: StreamBuilder<QuerySnapshot>(
             //fonte de dados (coleção)
-            stream: sphenophorus.snapshots(),
+            stream: perdas.snapshots(),
 
             //exibir os dados recuperados
             builder: (context, snapshot) {

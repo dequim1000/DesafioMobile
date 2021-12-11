@@ -69,7 +69,7 @@ class _PragasListState extends State<PragasList> {
         appBar: AppBar(
           title: const Text('DataMob'),
           centerTitle: true,
-          backgroundColor: Colors.blue.shade600,
+          backgroundColor: Colors.blue.shade900,
           actions: [
             IconButton(
               icon: Icon(Icons.logout_outlined),
@@ -80,10 +80,10 @@ class _PragasListState extends State<PragasList> {
             ),
           ],
         ),
-        backgroundColor: Colors.blue.shade100,
+        backgroundColor: Colors.white,
         floatingActionButton: FloatingActionButton(
           foregroundColor: Colors.white,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.blue.shade600,
           child: const Icon(Icons.add),
           onPressed: () {
             Navigator.pushNamed(context, 'pragasDeSoloPage');

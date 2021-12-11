@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MenuPageEntomologia extends StatefulWidget {
@@ -18,6 +19,17 @@ class _MenuPageState extends State<MenuPageEntomologia> {
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
+        actions: [
+          IconButton(
+            key: Key('botaoDeslogar'),
+            icon: Icon(Icons.logout),
+            tooltip: 'Sair',
+            onPressed: () async {
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacementNamed(context, 'login');
+            },
+          )
+        ],
       ),
       body: Stack(
         children: <Widget>[
